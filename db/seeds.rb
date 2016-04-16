@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+(0..10000).each do
+  Contact.create(
+    name:Faker::Name.name,
+    email:Faker::Internet.email,
+    phone:Faker::PhoneNumber.cell_phone,
+    avatar:Faker::Avatar.image
+  )
+end
