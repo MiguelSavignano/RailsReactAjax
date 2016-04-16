@@ -1,17 +1,17 @@
+br
 
-- @contacts.each do |contact|
-  .contact.well.col-md-6
-    .row
-      .col-md-4.nopadding
-        img class="img-thumbnail" src="#{contact.avatar}" width="100%" height="100%"
-      .col-md-8
-        ul.list-group
-          li.list-group-item
-            i.fa.fa-phone
-            a = contact.phone
-          li.list-group-item
-            i.fa.fa-envelope
-            a = contact.email
-    .row
-      i.fa.fa-star-o
-      strong = contact.name
+= form_tag contacts_path, method: :get, remote:true
+  .input-group.col-md-8.col-md-offset-2
+    input.search-query.form-control [
+      name="q"
+      placeholder="Search"
+      type="text"
+      onkeyUp="$(this).parents('form').submit()"
+    ]
+    span.input-group-btn
+      button.btn.btn-info type="submit"
+        span.glyphicon.glyphicon-search
+br
+
+#contacts
+  == render 'contacts'

@@ -4,7 +4,8 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all.limit 20
+    return @contacts = Contact.all.limit(20) unless params[:q].present?
+    @contacts = Contact.where("name ~* ?", params[:q] ).limit(20)
   end
 
   # GET /contacts/1
