@@ -2,12 +2,18 @@ var ContactsContainer = React.createClass({
   getInitialState() {
     return { contacts: this.props.contacts }
   },
+  componentDidMount() {
+    $.ContactsContainerEventSearchContacts = (event) =>
+      this.searchContacts(event.target.value)
+  },
   keyUpHandler(event){
     this.searchContacts(event.target.value)
   },
   searchContacts(searchValue){
     if(searchValue.length < 2){ return false }
-    var contacts_filtered = this.props.contacts.filter( (contact) => contact.name.match( new RegExp(searchValue, "i") ) )
+    var contacts_filtered = this.props.contacts.filter( (contact) =>
+      contact.name.match( new RegExp(searchValue, "i") )
+    )
     if(contacts_filtered.length != 0){
       this.setState({contacts: contacts_filtered})
     }

@@ -8,7 +8,40 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="padding-top: 3%;">
+<div class="react-css">
+  <div class="nav-main">
+    <div class="wrap">
+      <a class="nav-home" href="/">
+        <img class="nav-logo" src="http://facebook.github.io/react/img/logo.svg" width="36" height="36">
+        RailsReact
+      </a>
+      <ul class="nav-site nav-site-internal">
+        <li>
+          <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
+            <input id="algolia-doc-search"
+                   type="text"
+                   placeholder="Search..."
+                   class="aa-input"
+                   onKeyUp="$.ContactsContainerEventSearchContacts(event)"
+                   autocomplete="off"
+                   spellcheck="false"
+                   dir="auto"
+                   style="position: relative; vertical-align: top;">
+            <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Arial; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+            <span class="aa-dropdown-menu" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;">
+            <div class="aa-dataset-0"></div>
+          </span></span>
+        </li>
+      </ul>
+      <ul class="nav-site nav-site-external">
+        <li><a href="https://github.com/facebook/react">GitHub</a></li>
+        <li><a href="https://facebook.github.io/react-native/">React Native</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <%= yield %>
 </div>
