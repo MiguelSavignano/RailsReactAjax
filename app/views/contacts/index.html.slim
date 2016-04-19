@@ -1,17 +1,3 @@
 br
 
-= form_tag contacts_path, method: :get, remote:true
-  .input-group.col-md-8.col-md-offset-2
-    input.search-query.form-control [
-      name="q"
-      placeholder="Search"
-      type="text"
-      onkeyUp="$(this).parents('form').submit()"
-    ]
-    span.input-group-btn
-      button.btn.btn-info type="submit"
-        span.glyphicon.glyphicon-search
-br
-
-#contacts
-  == render 'contacts'
+= react_component('ContactsContainer', contacts: @contacts, contacts_path: contacts_path)
