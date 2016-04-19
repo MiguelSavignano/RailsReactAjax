@@ -6,11 +6,18 @@ var ContactsContainer = React.createClass({
     this.searchContacts(event.target.value)
   },
   searchContacts(searchValue){
-    $.getJSON(
-      this.props.contacts_path,
-      {q:searchValue},
-      (data) => this.setState({contacts: data})
-    )
+    if(searchValue.length < 2){ return false }
+    var contacts_filtered = this.props.contacts.filter( (contact) => contact.name.match( new RegExp(searchValue, "i") ) )
+    if(contacts_filtered.length != 0){
+      this.setState({contacts: contacts_filtered})
+    }
+    else{
+      $.getJSON(
+        this.props.contacts_path,
+        {q:searchValue},
+        (data) => this.setState({contacts: data})
+      )
+    }
   },
   render(){
     return(
@@ -18,6 +25,7 @@ var ContactsContainer = React.createClass({
         <div className="input-group col-md-8 col-md-offset-2">
           <input className="search-query form-control"
                  name="q"
+                 autoComplete="off"
                  onKeyUp={ this.keyUpHandler }
                  placeholder="Search" type="text" />
           <span className="input-group-btn">
