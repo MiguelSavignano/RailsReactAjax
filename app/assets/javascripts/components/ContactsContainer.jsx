@@ -3,8 +3,11 @@ var ContactsContainer = React.createClass({
     return { contacts: this.props.contacts }
   },
   componentDidMount() {
-    $.ContactsContainerEventSearchContacts = (event) =>
-      this.searchContacts(event.target.value)
+    // export function in the $ object
+    $.ContactsContainer = { searchContacts: this.searchContacts }
+    $("img.img-thumbnail").lazyload({
+      threshold : 200
+    })
   },
   keyUpHandler(event){
     this.searchContacts(event.target.value)
