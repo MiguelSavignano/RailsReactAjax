@@ -81,6 +81,9 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    browserify-rails (3.0.1)
+      railties (>= 4.0.0, < 5.0)
+      sprockets (>= 3.5.2)
     builder (3.2.2)
     byebug (8.2.4)
     callsite (0.0.11)
@@ -315,6 +318,7 @@ DEPENDENCIES
   annotate!
   better_errors
   bootstrap-sass (~> 3.3.5)
+  browserify-rails
   byebug
   carrierwave!
   chartkick

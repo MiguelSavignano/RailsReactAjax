@@ -1,0 +1,28 @@
+{
+  "name": "railsreact",
+  "version": "1.0.0",
+  "description": "== README",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "browserify": "^6.3.4",
+    "browserify-incremental": "^1.5.0",
+    "jquery-lazyload": "^1.9.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiguelSavignano/RailsReactAjax.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiguelSavignano/RailsReactAjax/issues"
+  },
+  "homepage": "https://github.com/MiguelSavignano/RailsReactAjax#readme"
+}
