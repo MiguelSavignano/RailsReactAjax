@@ -5,9 +5,6 @@ var ContactsContainer = React.createClass({
   componentDidMount() {
     // export function in the $ object
     $.ContactsContainer = { searchContacts: this.searchContacts }
-    $("img.img-thumbnail").lazyload({
-      threshold : 200
-    })
   },
   keyUpHandler(event){
     this.searchContacts(event.target.value)
@@ -31,6 +28,7 @@ var ContactsContainer = React.createClass({
   render(){
     return(
       <div>
+        <AlertInstance/>
         <div className="input-group col-md-8 col-md-offset-2">
           <input className="search-query form-control"
                  name="q"

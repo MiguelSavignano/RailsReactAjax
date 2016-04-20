@@ -18,3 +18,10 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+
+var ready = function(){
+  window.LazyLoad = require('react-lazyload');
+  window.Alert = require('react-bootstrap/lib/Alert');
+}
+$(document).ready(ready)
+$(document).on('page:load', ready)
