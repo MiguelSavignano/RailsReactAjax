@@ -9,9 +9,6 @@ var ContactsContainer = React.createClass({
   keyUpHandler(event){
     this.searchContacts(event.target.value)
   },
-  handleAlertDismiss(){
-    this.setState({alertVisible: false});
-  },
   searchContacts(searchValue){
     if(searchValue.length < 2){ return false }
     var contacts_filtered = this.props.contacts.filter( (contact) =>
@@ -33,7 +30,7 @@ var ContactsContainer = React.createClass({
       <div>
         <AlertMessages/>
         <div className="input-group col-md-8 col-md-offset-2">
-          <input className="search-query form-control"
+          <input className="form-control"
                  name="q"
                  autoComplete="off"
                  onKeyUp={ this.keyUpHandler }
