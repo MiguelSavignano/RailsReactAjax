@@ -1,6 +1,6 @@
 var ContactsContainer = React.createClass({
   getInitialState() {
-    return { contacts: this.props.contacts }
+    return { contacts: this.props.contacts, alertVisible: true }
   },
   componentDidMount() {
     // export function in the $ object
@@ -8,6 +8,9 @@ var ContactsContainer = React.createClass({
   },
   keyUpHandler(event){
     this.searchContacts(event.target.value)
+  },
+  handleAlertDismiss(){
+    this.setState({alertVisible: false});
   },
   searchContacts(searchValue){
     if(searchValue.length < 2){ return false }
@@ -28,7 +31,7 @@ var ContactsContainer = React.createClass({
   render(){
     return(
       <div>
-        <AlertInstance/>
+        <AlertMessages/>
         <div className="input-group col-md-8 col-md-offset-2">
           <input className="search-query form-control"
                  name="q"
