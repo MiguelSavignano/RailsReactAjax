@@ -1,14 +1,15 @@
-var ContactsContainer = React.createClass({
-  getInitialState() {
-    return { contacts: this.props.contacts, alertVisible: true }
-  },
+class ContactsContainer extends React.Component {
+  constructor(props){
+    super(props) 
+    this.state = { contacts: this.props.contacts, alertVisible: true }
+  }
   componentDidMount() {
     // export function in the $ object
     $.ContactsContainer = { searchContacts: this.searchContacts }
-  },
+  }
   keyUpHandler(event){
     this.searchContacts(event.target.value)
-  },
+  }
   searchContacts(searchValue){
     if(searchValue.length < 2){ return false }
     var contacts_filtered = this.props.contacts.filter( (contact) =>
@@ -24,13 +25,13 @@ var ContactsContainer = React.createClass({
         (data) => this.setState({contacts: data})
       )
     }
-  },
+  }
   render(){
     return(
       <div>
         <AlertMessages/>
         <div className="input-group col-md-8 col-md-offset-2">
-          <input className="form-control"
+          <input className="search-query form-control"
                  name="q"
                  autoComplete="off"
                  onKeyUp={ this.keyUpHandler }
@@ -44,4 +45,4 @@ var ContactsContainer = React.createClass({
       </div>
     )
   }
-})
+}
