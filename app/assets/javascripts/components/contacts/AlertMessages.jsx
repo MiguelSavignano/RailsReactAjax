@@ -1,7 +1,8 @@
 class AlertMessages extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { visible: this.props.visible || true }
+    this.state = { visible: props.visible || true }
+    this.handleAlertDismiss = this.handleAlertDismiss.bind(this);
   }
   handleAlertDismiss() {
     this.setState({visible: false});

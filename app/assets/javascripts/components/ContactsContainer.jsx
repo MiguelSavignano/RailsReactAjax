@@ -1,16 +1,16 @@
 class ContactsContainer extends React.Component {
   constructor(props){
-    super(props) 
+    super(props)
     this.state = { contacts: this.props.contacts, alertVisible: true }
   }
   componentDidMount() {
     // export function in the $ object
     $.ContactsContainer = { searchContacts: this.searchContacts }
   }
-  keyUpHandler(event){
+  keyUpHandler = (event) => {
     this.searchContacts(event.target.value)
   }
-  searchContacts(searchValue){
+  searchContacts = (searchValue) => {
     if(searchValue.length < 2){ return false }
     var contacts_filtered = this.props.contacts.filter( (contact) =>
       contact.name.match( new RegExp(searchValue, "i") )

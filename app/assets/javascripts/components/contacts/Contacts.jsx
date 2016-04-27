@@ -3,7 +3,7 @@ class Contacts extends React.Component {
     const contacts = this.props.contacts
     return (
       <div>{ this.props.contacts.map( (contact) =>
-        <div className="contact well col-md-6">
+        <div key={contact.id} className="contact well col-md-6">
           <div className="row">
             <div className="col-md-4">
               <img className="img-thumbnail" height="80%" src={contact.avatar} width="80%" />
