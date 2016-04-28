@@ -35,16 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "font-awesome-rails"
-gem "chartkick"
-gem 'nested_form_fields'
 
-gem "slim-rails"
 gem 'annotate', github: 'ctran/annotate_models'
 
-gem 'devise'
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem 'figaro'
-gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'faker'
 gem 'react-rails', '~> 1.6.0'
 gem 'sprockets-coffee-react'
