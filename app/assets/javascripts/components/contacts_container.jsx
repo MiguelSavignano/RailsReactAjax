@@ -4,7 +4,11 @@ class ContactsContainer extends React.Component {
     this.state = {contacts: this.props.contacts}
   }
   keyUpHandler = (event) => {
-    console.log(event.target.value)
+    $.getJSON(
+      "/contacts",
+      {q:event.target.value},
+      (contacts) => this.setState({contacts: contacts})
+    )
   }
   render () {
     return (
