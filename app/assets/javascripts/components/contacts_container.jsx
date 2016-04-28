@@ -3,20 +3,24 @@ class ContactsContainer extends React.Component {
     super(props)
     this.state = {contacts: this.props.contacts}
   }
+  fethContacts = (searchValue) =>{
+    $.getJSON(
+      "/contacts",
+      {q:searchValue},
+      (contacts) => this.setState({contacts: contacts})
+    )
+  }
   keyUpHandler = (event) => {
     var searchValue = event.target.value
     var contacts_filtered = this.state.contacts.filter( (contact) =>
       contact.name.match( new RegExp(searchValue, "i") )
     )
+    if(searchValue == "") return this.fethContacts(searchValue)
     if(contacts_filtered.length != 0){
-      this.setState({contacts: contacts_filtered})
+      return this.setState({contacts: contacts_filtered})
     }
     else{
-      $.getJSON(
-        "/contacts",
-        {q:searchValue},
-        (contacts) => this.setState({contacts: contacts})
-      )
+      this.fethContacts(searchValue)
     }
   }
   render () {
