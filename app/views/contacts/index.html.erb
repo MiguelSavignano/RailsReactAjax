@@ -1,18 +1,3 @@
-<%= form_tag contacts_path, method: :get, remote: true do %>
-  <div class="input-group col-md-8 col-md-offset-2">
-    <input type="text"
-           class="search-query form-control"
-           name="q"
-           autoComplete="off"
-           onkeyup="$(this).parents('form').submit()"
-           placeholder="Search"
-           />
-    <span class="input-group-btn">
-      <button class="btn btn-info" type="submit">
-        <span class="glyphicon glyphicon-search"></span>
-      </button>
-    </span>
-  </div>
-<% end %>
+<%= react_component( "SearchInput" ) %>
 <br>
 <%= react_component( "Contacts", {contacts:@contacts}) %>
