@@ -29,7 +29,6 @@ class ContactsContainer extends React.Component {
   render(){
     return(
       <div>
-        <AlertMessages/>
         <div className="input-group col-md-8 col-md-offset-2">
           <input className="search-query form-control"
                  name="q"
@@ -37,7 +36,9 @@ class ContactsContainer extends React.Component {
                  onKeyUp={ this.keyUpHandler }
                  placeholder="Search" type="text" />
           <span className="input-group-btn">
-            <button className="btn btn-info" type="submit"><span className="glyphicon glyphicon-search" /></button>
+            <button className="btn btn-info" type="submit">
+              <span className="glyphicon glyphicon-search" />
+            </button>
           </span>
         </div>
         <br/>
