@@ -15,4 +15,6 @@
   </div>
 <% end %>
 <br>
-<%= react_component('Contacts', contacts: @contacts) %>
+<div id="contacts">
+  <%= render( partial: "contacts", locals: {contacts:@contacts}) %>
+</div>
