@@ -1,33 +1,4 @@
-</br>
-<div>
-  <a class="js-icon icon-lg">
-    <i class="blue fa fa-heart-o"></i>
-  </a>
-  </br>
-  <strong>a Marta le gusta</strong>
-</div>
+<br/>
+<%= react_component('FavoriteBtn', {active:false})%>
 <hr>
-<div>
-  <a class="js-icon icon-lg">
-    <i class="blue fa fa-heart"></i>
-  </a>
-  </br>
-  <strong>a ti y a Marta le gusta</strong>
-</div>
-<script>
-  $(".js-icon").click(function(event){
-    var btnIcon = $(this).children("i")
-    var childText = $(this).parents('div').first().children('strong')  //serach chindren strong tag
-    if(btnIcon.hasClass("fa-heart-o")){
-      btnIcon.removeClass("fa-heart-o")
-      btnIcon.addClass("fa-heart")
-      var changedText = "a ti y "+childText.text()
-      childText.text(changedText)
-    }else if (btnIcon.hasClass("fa-heart")){
-      btnIcon.removeClass("fa-heart")
-      btnIcon.addClass("fa-heart-o")
-      var changedText = childText.text().replace("a ti y ","")
-      childText.text(changedText)
-    }
-  })
-</script>
+<%= react_component('FavoriteBtn', {active:true})%>

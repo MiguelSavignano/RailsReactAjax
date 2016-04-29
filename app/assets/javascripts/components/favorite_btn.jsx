@@ -18,7 +18,4 @@ class FavoriteBtn extends React.Component {
     );
   }
 }
-FavoriteBtn.defaultProps = {
-  acive: false,
-  users_liked:"Marta"
- };
+FavoriteBtn.defaultProps = { acive: false };
