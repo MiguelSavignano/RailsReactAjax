@@ -10,6 +10,12 @@ class ContactsContainer extends React.Component {
       (contacts) => this.setState({contacts: contacts})
     )
   }
+  _handlerSelectedContact = (contact) =>{
+    this.setState({contactToShow: contact})
+  }
+  _handlerHideContact = () =>{
+    this.setState({contactToShow: undefined})
+  }
   keyUpHandler = (event) => {
     var searchValue = event.target.value
     var contacts_filtered = this.state.contacts.filter( (contact) =>
@@ -26,8 +32,9 @@ class ContactsContainer extends React.Component {
   render () {
     return (
       <div>
+        {this.state.contactToShow && <Contact contact={this.state.contactToShow}  onHideContact={this._handlerHideContact}/> }
         <SearchInput onKeyUp={this.keyUpHandler}/>
-        <Contacts contacts={this.state.contacts} />
+        <Contacts contacts={this.state.contacts} onSelectedContact={this._handlerSelectedContact} />
       </div>
     );
   }

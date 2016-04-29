@@ -5,7 +5,7 @@ class Contacts extends React.Component{
       <div>{
         contacts.map( (contact) =>
           <div key={contact.id} className="contact well col-md-6">
-            <div className="row">
+            <div className="row" onClick={() => this.props.onSelectedContact(contact)}>
               <div className="col-md-4">
                 <img className="img-thumbnail" height="80%" src={contact.avatar} width="80%" />
               </div>
