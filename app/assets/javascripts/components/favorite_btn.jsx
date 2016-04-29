@@ -8,10 +8,17 @@ class FavoriteBtn extends React.Component {
   }
   render () {
     return (
-      <a className="icon-lg" onClick={this._onClickHandler}>
-        <i className={`blue fa ${this.state.active ? 'fa-heart' : 'fa-heart-o'}`}></i>
-      </a>
+      <div>
+        <a className="icon-lg" onClick={this._onClickHandler}>
+          <i className={`blue fa ${this.state.active ? 'fa-heart' : 'fa-heart-o'}`}></i>
+        </a>
+        <br/>
+        <strong>{`${this.state.active ? 'a ti y ' : ''}a Marta le gusta`  }</strong>
+      </div>
     );
   }
 }
-FavoriteBtn.defaultProps = {acive: false };
+FavoriteBtn.defaultProps = {
+  acive: false,
+  users_liked:"Marta"
+ };
