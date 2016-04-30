@@ -4,7 +4,7 @@ class Contacts extends React.Component{
     return (
       <div>{
         contacts.map( (contact) =>
-          <div key={contact.id} className="contact well col-md-6">
+          <div className="contact well col-md-6">
             <div className="row">
               <div className="col-md-4">
                 <img className="img-thumbnail" height="80%" src={contact.avatar} width="80%" />
