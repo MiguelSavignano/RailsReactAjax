@@ -9,12 +9,13 @@ class ContactsContainer extends React.Component {
     var contacts_filtered = this.state.contacts.filter( (contact) =>
       contact.name.match( new RegExp(searchValue, "i") )
     )
-    if(searchValue == "" || contacts_filtered.length == 0)
+    if(searchValue == "" || contacts_filtered.length == 0){
       $.getJSON(
         "/contacts",
         {q:searchValue},
         (contacts) => this.setState({contacts: contacts})
       )
+    }
     else{
       this.setState({contacts: contacts_filtered})
     }
