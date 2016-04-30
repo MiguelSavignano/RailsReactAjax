@@ -5,18 +5,18 @@ class ContactsContainer extends React.Component {
   }
   keyUpHandler = (event) => {
     var searchValue = event.target.value
+
     var contacts_filtered = this.state.contacts.filter( (contact) =>
       contact.name.match( new RegExp(searchValue, "i") )
     )
-    if(contacts_filtered.length != 0){
-      this.setState({contacts: contacts_filtered})
-    }
-    else{
+    if(searchValue == "" || contacts_filtered.length == 0)
       $.getJSON(
         "/contacts",
         {q:searchValue},
         (contacts) => this.setState({contacts: contacts})
       )
+    else{
+      this.setState({contacts: contacts_filtered})
     }
   }
   render () {
