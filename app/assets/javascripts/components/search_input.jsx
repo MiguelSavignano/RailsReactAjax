@@ -3,7 +3,7 @@ class SearchInput extends React.Component{
     return (
       <div className="input-group col-md-8 col-md-offset-2">
         <input type="text"
-               className="search-query form-control"
+               className="form-control"
                name="q"
                autoComplete="off"
                placeholder="Search" />
