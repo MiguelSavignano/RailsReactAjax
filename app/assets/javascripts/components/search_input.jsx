@@ -1,7 +1,4 @@
 class SearchInput extends React.Component{
-  keyUpHandler = (event) => {
-    console.log(event.target.value)
-  }
   render() {
     return (
       <div className="input-group col-md-8 col-md-offset-2">
