@@ -6,6 +6,9 @@ class Contact extends React.Component{
   onClickHandler = (event) => {
     this.setState({isModalShow: true})
   }
+  onHideModalHandler = (event) => {
+    this.setState({isModalShow: false})
+  }
   render() {
     const contact = this.props.contact
     return (
@@ -31,7 +34,9 @@ class Contact extends React.Component{
           <i className="fa fa-star-o" />
           <strong>{contact.name}</strong>
         </div>
-        {this.state.isModalShow && <Modal modalTitle={"Contacto "+contact.id } onHideModal={this.props.onHideContact} >
+        {this.state.isModalShow &&
+          <Modal modalTitle={"Contacto "+contact.id }
+                 onHideModal={this.onHideModalHandler} >
           <div>{contact.phone}</div>
         </Modal>}
       </div>
