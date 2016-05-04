@@ -24,6 +24,7 @@ class ContactsContainer extends React.Component {
     return (
       <div>
         <SearchInput onKeyUp={this.keyUpHandler}/>
+        <br/>
         <Contacts contacts={this.state.contacts} />
       </div>
     );
