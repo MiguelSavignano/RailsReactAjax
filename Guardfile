@@ -21,6 +21,7 @@ guard 'livereload' do
     scss: :css,
     sass: :css,
     js: :js,
+    jsx: :js,
     coffee: :js,
     html: :html,
     png: :png,
